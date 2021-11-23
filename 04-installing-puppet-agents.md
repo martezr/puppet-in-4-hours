@@ -2,6 +2,12 @@
 
 This lesson walks through installing and configuring the Puppet agent on the agent node.
 
+[Exercise 4.1: Install and bootstrap the Puppet agent](#exercise-41-install-and-bootstrap-the-puppet-agent)
+
+[Exercise 4.2: Puppet Certificate Autosigning](#exercise-42-puppet-certificate-autosigning)
+
+[Exercise 4.3: Puppet Trusted Facts](#exercise-43-puppet-trusted-facts)
+
 
 ## Exercise 4.1: Install and bootstrap the Puppet agent
 
