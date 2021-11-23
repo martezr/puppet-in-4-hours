@@ -1,3 +1,4 @@
+# Lesson #4: Installing Puppet Agents
 
 List certificate requests
 

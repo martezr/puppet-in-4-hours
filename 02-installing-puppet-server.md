@@ -1,4 +1,4 @@
-# Lesson 2: Installing Puppet Server
+# Lesson #2: Installing Puppet Server
 
 ```bash
 wget https://apt.puppet.com/puppet7-release-focal.deb

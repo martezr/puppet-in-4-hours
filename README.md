@@ -2,6 +2,23 @@
 
 This repository hosts the code and examples for the Puppet in 4 hours online workshop.
 
+## Getting Started
+
+Download the Github repository
+
+```bash
+git clone git@github.com:martezr/puppet-in-4-hours.git
+```
+
+Change the current working directory to the Github repository
+
+```bash
+cd puppet-in-4-hours
+```
+
+```bash
+vagrant up
+```
 
 ## Lessons
 
