@@ -1,5 +1,8 @@
 # Lesson #7: Using Puppet Hiera for Data Separation
 
+
+## Exercise 7.2: Installing and Configuring Hiera Eyaml
+
 Install Hiera Eyaml
 
 ```bash
@@ -36,5 +39,6 @@ chmod -R 0500 /etc/puppetlabs/puppet/eyaml/keys
 chmod 0400 /etc/puppetlabs/puppet/eyaml/keys/*.pem
 ```
 
+## Exercise 7.3: Encrypting Senstive Data with Hiera Eyaml
 
 /opt/puppetlabs/puppet/bin/eyaml encrypt -s 'hello there'
