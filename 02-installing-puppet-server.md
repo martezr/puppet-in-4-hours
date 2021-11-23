@@ -29,3 +29,5 @@ Enable the puppetserver service to start on boot
 ```bash
 sudo systemctl enable puppetserver
 ```
+
+[Next Lesson - Lesson #3: Configuring Puppet Server](./03-configuring-puppet-server.md)

@@ -17,3 +17,5 @@ puppetserver ca sign --certname agent.localdomain
 puppet ssl bootstrap
 ```
 
+
+[Next Lesson - Lesson #5: Puppet Code Development](./05-puppet-code-development.md)
