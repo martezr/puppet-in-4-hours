@@ -3,8 +3,11 @@
 This lesson walks through installing Puppet Server and PuppetDB.
 
 [Exercise 2.1: Install Puppet Server](#exercise-21-install-puppet-server)
+
 [Exercise 2.2: Install PostgreSQL](#exercise-22-install-postgresql)
+
 [Exercise 2.3: Install and Configure PuppetDB](#exercise-23-install-and-configure-puppetdb)
+
 [Exercise 2.4: Configure Puppet Server to PuppetDB connection](#exercise-24-configure-puppet-server-to-puppetdb-connection)
 
 # Exercise 2.1: Install Puppet Server
@@ -86,6 +89,8 @@ Install PuppetDB
 sudo /opt/puppetlabs/bin/puppet resource package puppetdb ensure=latest
 ```
 
+Configure the PuppetDB database connection details
+
 ```bash
 cat << EOF > /etc/puppetlabs/puppetdb/conf.d/database.ini
 [database]
@@ -103,6 +108,8 @@ password = password123
 # gc-interval = 60
 EOF
 ```
+
+Start the PuppetDB service and enable it to start on boot
 
 ```bash
 sudo /opt/puppetlabs/bin/puppet resource service puppetdb ensure=running enable=true
@@ -141,9 +148,13 @@ primary server:
 EOF
 ```
 
+Update the file permissions on all files in the Puppet configuration directory
+
 ```bash
 sudo chown -R puppet:puppet /etc/puppetlabs/puppet
 ```
+
+Restart the Puppet Server service
 
 ```bash
 sudo systemctl restart puppetserver
