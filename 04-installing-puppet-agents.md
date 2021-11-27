@@ -11,7 +11,7 @@ This lesson walks through installing and configuring the Puppet agent on the age
 [Exercise 4.4: Puppet Trusted Facts](#exercise-44-puppet-trusted-facts)
 
 
-## Exercise 4.1: Install Puppet agent
+# Exercise 4.1: Install Puppet agent
 
 Download the Puppet repository package
 
@@ -43,7 +43,7 @@ Configure the Puppet server that the agent will talk to
 /opt/puppetlabs/bin/puppet config set server puppet --section main
 ```
 
-# Exercisee 4.2: Bootstrap Puppet Agent
+# Exercise 4.2: Bootstrap Puppet Agent
 
 Trigger the Puppet agent bootstrap process
 
@@ -69,7 +69,7 @@ Trigger the Puppet agent bootstrap process
 puppet ssl bootstrap
 ```
 
-## Exercise 4.3: Puppet Certificate Autosigning
+# Exercise 4.3: Puppet Certificate Autosigning
 
 ```bash
 #!/bin/bash
@@ -95,8 +95,7 @@ exit $STATUS
 ```
 
 
-## Exercise 4.4: Puppet Trusted Facts
-
+# Exercise 4.4: Puppet Trusted Facts
 
 
 [Next Lesson - Lesson #5: Puppet Code Development](./05-puppet-code-development.md)
