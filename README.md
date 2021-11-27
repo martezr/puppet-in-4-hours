@@ -16,6 +16,8 @@ Change the current working directory to the Github repository
 cd puppet-in-4-hours
 ```
 
+The lab exercises use two Ubuntu 20.04 virtual machines that run locally using HashiCorp Vagrant. Run the `vagrant up` command to provision the virtual machines on the local machine.
+
 ```bash
 vagrant up
 ```
