@@ -2,24 +2,30 @@
 
 This lesson walks through installing and configuring the Puppet agent on the agent node.
 
-[Exercise 4.1: Install and bootstrap the Puppet agent](#exercise-41-install-and-bootstrap-the-puppet-agent)
+[Exercise 4.1: Install Puppet agent](#exercise-41-install-puppet-agent)
 
-[Exercise 4.2: Puppet Certificate Autosigning](#exercise-42-puppet-certificate-autosigning)
+[Exercise 4.2: Bootstrap Puppet agent](#exercise-42-bootstrap-puppet-agent)
 
-[Exercise 4.3: Puppet Trusted Facts](#exercise-43-puppet-trusted-facts)
+[Exercise 4.3: Puppet Certificate Autosigning](#exercise-43-puppet-certificate-autosigning)
+
+[Exercise 4.4: Puppet Trusted Facts](#exercise-44-puppet-trusted-facts)
 
 
-## Exercise 4.1: Install and bootstrap the Puppet agent
+## Exercise 4.1: Install Puppet agent
 
-Download the 
+Download the Puppet repository package
 
 ```bash
 wget https://apt.puppet.com/puppet7-release-focal.deb
 ```
 
+Install the Puppet repository on the system
+
 ```bash
 sudo dpkg -i puppet7-release-focal.deb
 ```
+
+Trigger an apt update to enable the Puppet repository
 
 ```bash
 sudo apt-get update -y
@@ -37,31 +43,33 @@ Configure the Puppet server that the agent will talk to
 /opt/puppetlabs/bin/puppet config set server puppet --section main
 ```
 
+# Exercisee 4.2: Bootstrap Puppet Agent
+
 Trigger the Puppet agent bootstrap process
 
 ```bash
 puppet ssl bootstrap waitforcert 0
 ```
 
-List certificate requests
+List certificate requests (**Execute this command on the Puppet Server node**)
 
 ```bash
 puppetserver ca list
 ```
 
-
-Sign the agent certificate request
+Sign the agent certificate request (**Execute this command on the Puppet Server node**)
 
 ```bash
 puppetserver ca sign --certname agent.localdomain
 ```
 
+Trigger the Puppet agent bootstrap process
 
 ```bash
 puppet ssl bootstrap
 ```
 
-## Exercise 4.2: Puppet Certificate Autosigning
+## Exercise 4.3: Puppet Certificate Autosigning
 
 ```bash
 #!/bin/bash
@@ -87,7 +95,7 @@ exit $STATUS
 ```
 
 
-## Exercise 4.3: Puppet Trusted Facts
+## Exercise 4.4: Puppet Trusted Facts
 
 
 
