@@ -35,3 +35,7 @@ vagrant up
 [Lesson #6: Using Puppet Forge Modules](./06-using-puppet-forge-modules.md)
 
 [Lesson #7: Using Puppet Hiera for Data Separation](./07-using-puppet-hiera.md)
+
+## Solutions
+
+The [solutions](./solutions) section of this repository contains the full examples of the content covered during the workshop.
