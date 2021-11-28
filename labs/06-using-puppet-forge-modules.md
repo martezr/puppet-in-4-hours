@@ -10,7 +10,7 @@ This lab walks through using modules from the Puppet Forge.
 
 [Lab 6.2: Applying Forge Modules](#lab-62-applying-forge-modules)
 
-# Lab 6.1: Installing Forge Modules
+### Lab 6.1: Installing Forge Modules
 
 
 1. Add the following to the Puppetfile in the control repository
@@ -50,7 +50,7 @@ r10k deployment environment -m
 ls /etc/puppetlabs/puppet/code/environments/production/modules
 ```
 
-# Lab 6.2: Applying Forge Modules
+### Lab 6.2: Applying Forge Modules
 
 2. 
 

@@ -17,37 +17,37 @@ In this lab you will walk through the process of setting up the Puppet primary s
 
 This lab walks through installing the Puppet Server package on the server node.
 
-1. Download the Puppet repository package
+1. Download the Puppet repository package.
 
 ```bash
 wget https://apt.puppet.com/puppet7-release-focal.deb
 ```
 
-2. Install the Puppet repository on the system
+2. Install the Puppet repository on the system.
 
 ```bash
 sudo dpkg -i puppet7-release-focal.deb
 ```
 
-3. Trigger an apt update to enable the Puppet repository
+3. Trigger an apt update to enable the Puppet repository.
 
 ```bash
 sudo apt-get update -y
 ```
 
-4. Install the puppetserver package on the system
+4. Install the puppetserver package on the system.
 
 ```bash
 sudo apt-get install -y puppetserver
 ```
 
-5. Start the puppetserver service
+5. Start the puppetserver service.
 
 ```bash
 sudo systemctl start puppetserver
 ```
 
-6. Enable the puppetserver service to start on boot
+6. Enable the puppetserver service to start on boot.
 
 ```bash
 sudo systemctl enable puppetserver
@@ -57,13 +57,13 @@ sudo systemctl enable puppetserver
 
 This lab walks through install and configuring the PostgreSQL database used by PuppetDB.
 
-1. Install PostgreSQL
+1. Install the PostgreSQL package.
 
 ```bash
 sudo apt install -y postgresql postgresql-contrib
 ```
 
-2. 
+2. Create the PuppetDB database, users and privileges.
 
 ```bash
 sudo su postgres <<EOF
@@ -89,13 +89,13 @@ EOF
 
 This lab walks through installing PuppetDB and connecting it to the PostgreSQL database.
 
-1. Install PuppetDB
+1. Install PuppetDB using the `puppet resource` command.
 
 ```bash
 sudo /opt/puppetlabs/bin/puppet resource package puppetdb ensure=latest
 ```
 
-2. Configure the PuppetDB database connection details
+2. Configure the PuppetDB database connection details.
 
 ```bash
 cat << EOF > /etc/puppetlabs/puppetdb/conf.d/database.ini
@@ -115,7 +115,7 @@ password = password123
 EOF
 ```
 
-3. Start the PuppetDB service and enable it to start on boot
+3. Start the PuppetDB service and enable it to start on boot using the `puppet resource` command.
 
 ```bash
 sudo /opt/puppetlabs/bin/puppet resource service puppetdb ensure=running enable=true
@@ -160,13 +160,13 @@ primary server:
 EOF
 ```
 
-5. Update the file permissions on all files in the Puppet configuration directory
+5. Update the file permissions on all files in the Puppet configuration directory.
 
 ```bash
 sudo chown -R puppet:puppet /etc/puppetlabs/puppet
 ```
 
-6. Restart the Puppet Server service
+6. Restart the Puppet Server service.
 
 ```bash
 sudo systemctl restart puppetserver

@@ -12,67 +12,67 @@ This lab walks through installing and configuring the Puppet agent on the agent 
 
 [Lab 4.3: Puppet Certificate Autosigning](#lab-43-puppet-certificate-autosigning)
 
-# Lab 4.1: Install Puppet agent
+### Lab 4.1: Install Puppet agent
 
-1 .Download the Puppet repository package
+1. Download the Puppet repository package.
 
 ```bash
 wget https://apt.puppet.com/puppet7-release-focal.deb
 ```
 
-2. Install the Puppet repository on the system
+2. Install the Puppet repository on the system.
 
 ```bash
 sudo dpkg -i puppet7-release-focal.deb
 ```
 
-3. Trigger an apt update to enable the Puppet repository
+3. Trigger an apt update to enable the Puppet repository.
 
 ```bash
 sudo apt-get update -y
 ```
 
-4. Install the Puppet agent on the system
+4. Install the Puppet agent on the system.
 
 ```bash
 sudo apt-get install puppet-agent
 ```
 
-5. Configure the Puppet server that the agent will talk to
+5. Configure the Puppet server that the agent will connect to.
 
 ```bash
 /opt/puppetlabs/bin/puppet config set server puppet --section main
 ```
 
-# Lab 4.2: Bootstrap Puppet Agent
+### Lab 4.2: Bootstrap Puppet Agent
 
-1. Trigger the Puppet agent bootstrap process
+1. Trigger the Puppet agent bootstrap process.
 
 ```bash
 puppet ssl bootstrap waitforcert 0
 ```
 
-2. List certificate requests (**Execute this command on the Puppet Server node**)
+2. List certificate requests (**Execute this command on the Puppet Server node**).
 
 ```bash
 puppetserver ca list
 ```
 
-3. Sign the agent certificate request (**Execute this command on the Puppet Server node**)
+3. Sign the agent certificate request (**Execute this command on the Puppet Server node**).
 
 ```bash
 puppetserver ca sign --certname agent.localdomain
 ```
 
-4. Trigger the Puppet agent bootstrap process
+4. Trigger the Puppet agent bootstrap process.
 
 ```bash
 puppet ssl bootstrap
 ```
 
-# Lab 4.3: Puppet Certificate Autosigning
+### Lab 4.3: Puppet Certificate Autosigning
 
-1. Create an autosigning script on the Puppet server node at /etc/puppetlabs/puppet/autosigning.sh
+1. Create an autosigning script on the Puppet server node at /etc/puppetlabs/puppet/autosigning.sh.
 
 ```bash
 #!/bin/bash
@@ -97,7 +97,7 @@ fi
 exit $STATUS
 ```
 
-2. Create a CSR Attributes YAML file with the challenge password and trusted facts
+2. Create a CSR Attributes YAML file with the challenge password and trusted facts.
 
 ```bash
 cat > /etc/puppetlabs/puppet/csr_attributes.yaml << YAML
@@ -109,7 +109,7 @@ extension_requests:
 YAML
 ```
 
-3. Trigger an agent bootstrap
+3. Trigger an agent bootstrap.
 
 ```bash
 sudo /opt/puppetlabs/bin/puppet ssl bootstrap waitforcert 0

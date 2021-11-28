@@ -6,16 +6,16 @@ This lesson walks through using Puppet Hiera for data separation.
 
 ## Exercises
 
-[Exercise 7.1: Configure Hiera](#exercise-71-configure-hiera)
+[Lab 7.1: Configure Hiera](#exercise-71-configure-hiera)
 
-[Exercise 7.2: Bootstrap Puppet agent](#exercise-72-bootstrap-puppet-agent)
+[Lab 7.2: Bootstrap Puppet agent](#exercise-72-bootstrap-puppet-agent)
 
-[Exercise 7.3: Installing and Configure Hiera Eyaml](#exercise-73-installing-and-configuring-hiera-eyaml)
+[Lab 7.3: Installing and Configure Hiera Eyaml](#exercise-73-installing-and-configuring-hiera-eyaml)
 
-[Exercise 7.4: Encrypting Senstive Data with Hiera Eyaml](#exercise-74-encrypting-senstive-data-with-hiera-eyaml)
+[Lab 7.4: Encrypting Senstive Data with Hiera Eyaml](#exercise-74-encrypting-senstive-data-with-hiera-eyaml)
 
 
-# Exercise 7.1: Configure Hiera
+### Lab 7.1: Configure Hiera
 
 
 ```bash
@@ -34,7 +34,7 @@ hierarchy:
 ```
 
 
-# Exercise 7.3: Installing and Configuring Hiera Eyaml
+### Lab 7.3: Installing and Configuring Hiera Eyaml
 
 1. Install Hiera Eyaml
 
@@ -101,7 +101,7 @@ hierarchy:
       - "common.yaml"
 ```
 
-# Exercise 7.4: Encrypting Senstive Data with Hiera Eyaml
+### Lab 7.4: Encrypting Senstive Data with Hiera Eyaml
 
 /opt/puppetlabs/puppet/bin/eyaml encrypt -s 'hello there'
 
@@ -110,9 +110,8 @@ hierarchy:
 
 In this lab, you have:
 
-+ Installed and configured Puppet Server
-+ Installed and configured the PostgreSQL database for PuppetDB
-+ Installed and configured PuppetDB
-+ Configured the PuppetDB integration for Puppet Server
++ Configured Hiera
++ Installed and configured Hiera eyaml
++ Encrypted sensitive data with Hiera eyaml
 
 [Previous Lab - Lab #6](./06-using-puppet-forge-modules.md)

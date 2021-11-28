@@ -6,13 +6,13 @@ This repository hosts the code and examples for the Puppet in 4 hours online wor
 
 ## Getting Started
 
-Download the Github repository
+Download this Github repository to your local system using `git clone`.
 
 ```bash
 git clone git@github.com:martezr/puppet-in-4-hours.git
 ```
 
-Change the current working directory to the Github repository
+Change the current working directory to the Github repository.
 
 ```bash
 cd puppet-in-4-hours
@@ -24,9 +24,13 @@ The lab exercises use two Ubuntu 20.04 virtual machines that run locally using H
 vagrant up
 ```
 
+Command line access to the server node can be acheived by running the `vagrant ssh` command below. This will place you at the server node's console as the vagrant user.
+
 ```bash
 vagrant ssh server
 ```
+
+Command line access to the agent node can be acheived by running the `vagrant ssh` command below. This will place you at the agent node's console as the vagrant user.
 
 ```bash
 vagrant ssh agent

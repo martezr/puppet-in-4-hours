@@ -8,27 +8,31 @@ This lab walks through configuring the Puppet server.
 
 [Lab 3.1: Creating a Control Repository](#lab-31-creating-a-control-repository)
 
-https://github.com/puppetlabs/control-repo
-
 [Lab 3.2: Installing and Configuring r10k](#lab-32-installing-and-configuring-r10k)
 
-# Lab 3.1: Creating a Control Repository
+### Lab 3.1: Creating a Control Repository
 
-# Lab 3.2: Installing and Configuring r10k
+1. Create a fork of the Puppet control repository template
 
-1. Install the r10k gem
+```
+https://github.com/puppetlabs/control-repo
+```
+
+### Lab 3.2: Installing and Configuring r10k
+
+1. Install the r10k gem.
 
 ```bash
 /opt/puppetlabs/puppet/bin/gem install r10k
 ```
 
-2. Create a directory for the r10k configuration file
+2. Create a directory for the r10k configuration file.
 
 ```bash
 mkdir -p /etc/puppetlabs/r10k
 ```
 
-3. Create the r10k configuration file and replace the remote repository with the repository you previously created for your control repository
+3. Create the r10k configuration file and replace the remote repository with the repository you previously created for your control repository.
 
 ```bash
 cat << EOF > /etc/puppetlabs/r10k/r10k.yaml
@@ -45,7 +49,7 @@ cat << EOF > /etc/puppetlabs/r10k/r10k.yaml
 EOF
 ```
 
-4. Deploy environments and modules
+4. Deploy environments and modules.
 
 ```bash
 sudo /opt/puppetlabs/puppet/bin/r10k deploy environment -m

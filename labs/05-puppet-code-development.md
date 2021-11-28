@@ -5,7 +5,11 @@
 
 ## Exercises
 
-# Lab 5.1: 
+[Lab 5.1: Install Puppet agent](#lab-41-install-puppet-agent)
+
+[Lab 5.2: Bootstrap Puppet agent](#lab-42-bootstrap-puppet-agent)
+
+### Lab 5.1: 
 
 ```bash
 class nginx (
