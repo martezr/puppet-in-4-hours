@@ -114,4 +114,4 @@ YAML
 sudo /opt/puppetlabs/bin/puppet ssl bootstrap waitforcert 0
 ```
 
-[Previous Exercise - Exercise #3: Configuring Puppet Server](./03-configuring-puppet-server.md)			[Next Exercise - Exercise #5: Puppet Code Development](./05-puppet-code-development.md)
+[Previous Exercise - Exercise #3](./03-configuring-puppet-server.md)  |  [Next Exercise - Exercise #5](./05-puppet-code-development.md)
