@@ -16,25 +16,33 @@ Change the current working directory to the Github repository
 cd puppet-in-4-hours
 ```
 
-The lab exercises use two Ubuntu 20.04 virtual machines that run locally using HashiCorp Vagrant. Run the `vagrant up` command to provision the virtual machines on the local machine.
+The lab exercises use two Ubuntu 20.04 virtual machines that run locally using HashiCorp Vagrant. Run the `vagrant up` command to provision the virtual machines on the local machine. If you don't have Vagrant installed then it can be installed using the following documentation - https://learn.hashicorp.com/tutorials/vagrant/getting-started-install.
 
 ```bash
 vagrant up
 ```
 
-## Lessons
+```bash
+vagrant ssh server
+```
 
-[Lesson #2: Installing Puppet Server](./02-installing-puppet-server.md)
+```bash
+vagrant ssh agent
+```
 
-[Lesson #3: Configuring Puppet Server](./03-configuring-puppet-server.md)
+## Exercises
 
-[Lesson #4: Installing Puppet Agents](./04-installing-puppet-agents.md)
+[Exercise #2: Installing Puppet Server](./02-installing-puppet-server.md)
 
-[Lesson #5: Puppet Code Development](./05-puppet-code-development.md)
+[Exercise #3: Configuring Puppet Server](./03-configuring-puppet-server.md)
 
-[Lesson #6: Using Puppet Forge Modules](./06-using-puppet-forge-modules.md)
+[Exercise #4: Installing Puppet Agents](./04-installing-puppet-agents.md)
 
-[Lesson #7: Using Puppet Hiera for Data Separation](./07-using-puppet-hiera.md)
+[Exercisen #5: Puppet Code Development](./05-puppet-code-development.md)
+
+[Exercise #6: Using Puppet Forge Modules](./06-using-puppet-forge-modules.md)
+
+[Exercise #7: Using Puppet Hiera for Data Separation](./07-using-puppet-hiera.md)
 
 ## Solutions
 
