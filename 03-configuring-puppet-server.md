@@ -12,13 +12,20 @@ https://github.com/puppetlabs/control-repo
 
 # Exercise 3.2: Installing and Configuring r10k
 
+
+1. 
+
 ```bash
 /opt/puppetlabs/puppet/bin/gem install r10k
 ```
 
+2. 
+
 ```bash
 mkdir -p /etc/puppetlabs/r10k
 ```
+
+3. 
 
 ```bash
 cat << EOF > /etc/puppetlabs/r10k/r10k.yaml
@@ -35,7 +42,7 @@ cat << EOF > /etc/puppetlabs/r10k/r10k.yaml
 EOF
 ```
 
-Deploy environments and modules
+4. Deploy environments and modules
 
 ```bash
 sudo /opt/puppetlabs/puppet/bin/r10k deploy environment -m
