@@ -13,6 +13,23 @@ This lesson walks through using Puppet Hiera for data separation.
 
 # Exercise 7.1: Configure Hiera
 
+
+```bash
+---
+version: 5
+defaults:
+  datadir: data
+hierarchy:
+  - name: "Normal data"
+    data_hash: yaml_data # Standard yaml backend
+    paths:
+      - "nodes/%{trusted.certname}.yaml"
+      - "roles/%{trusted.extensions.pp_role}.yaml"
+      - "os/%{facts.os.family}.yaml"
+      - "common.yaml"
+```
+
+
 # Exercise 7.3: Installing and Configuring Hiera Eyaml
 
 1. Install Hiera Eyaml
@@ -55,6 +72,29 @@ chmod -R 0500 /etc/puppetlabs/puppet/eyaml/keys
 
 ```bash
 chmod 0400 /etc/puppetlabs/puppet/eyaml/keys/*.pem
+```
+
+```bash
+---
+version: 5
+defaults:
+  datadir: data
+hierarchy:
+  - name: "Secret data: per-node, per-datacenter, common"
+    lookup_key: eyaml_lookup_key # eyaml backend
+    paths:
+      - "secrets/nodes/%{trusted.certname}.eyaml"  # Include explicit file extension
+      - "common.eyaml"
+    options:
+      pkcs7_private_key: /etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem
+      pkcs7_public_key:  /etc/puppetlabs/puppet/eyaml/public_key.pkcs7.pem
+  - name: "Normal data"
+    data_hash: yaml_data # Standard yaml backend
+    paths:
+      - "nodes/%{trusted.certname}.yaml"
+      - "roles/%{trusted.extensions.pp_role}.yaml"
+      - "os/%{facts.os.family}.yaml"
+      - "common.yaml"
 ```
 
 # Exercise 7.4: Encrypting Senstive Data with Hiera Eyaml
