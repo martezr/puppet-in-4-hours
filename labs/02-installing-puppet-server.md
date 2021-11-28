@@ -1,6 +1,9 @@
 # Lab #2: Installing Puppet Server
 
-This lab walks through installing Puppet Server and PuppetDB.
+## Overview
+In this lab you will walk through the process of setting up the Puppet primary server component in the Puppet architecture. You will install the Puppet server, PuppetDB and PostgreSQL components on the same virtual machine that acts as the server node.
+
+## Exercises
 
 [Lab 2.1: Install Puppet Server](#lab-21-install-puppet-server)
 
@@ -10,7 +13,7 @@ This lab walks through installing Puppet Server and PuppetDB.
 
 [Lab 2.4: Configure Puppet Server to PuppetDB connection](#lab-24-configure-puppet-server-to-puppetdb-connection)
 
-# Lab 2.1: Install Puppet Server
+### Lab 2.1: Install Puppet Server
 
 This lab walks through installing the Puppet Server package on the server node.
 
@@ -50,7 +53,7 @@ sudo systemctl start puppetserver
 sudo systemctl enable puppetserver
 ```
 
-# Lab 2.2: Install PostgreSQL
+### Lab 2.2: Install PostgreSQL
 
 This lab walks through install and configuring the PostgreSQL database used by PuppetDB.
 
@@ -82,7 +85,7 @@ EOF
 /etc/postgresql/12/main/pg_hba.conf
 ```
 
-# Lab 2.3: Install and Configure PuppetDB
+### Lab 2.3: Install and Configure PuppetDB
 
 This lab walks through installing PuppetDB and connecting it to the PostgreSQL database.
 
@@ -168,5 +171,14 @@ sudo chown -R puppet:puppet /etc/puppetlabs/puppet
 ```bash
 sudo systemctl restart puppetserver
 ```
+
+## Review
+
+In this lab, you have:
+
++ Installed and configured Puppet Server
++ Installed and configured the PostgreSQL database for PuppetDB
++ Installed and configured PuppetDB
++ Configured the PuppetDB integration for Puppet Server
 
 [Next Lab - Lab #3: Configuring Puppet Server](./labs/03-configuring-puppet-server.md)
