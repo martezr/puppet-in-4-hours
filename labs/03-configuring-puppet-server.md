@@ -52,4 +52,4 @@ EOF
 sudo /opt/puppetlabs/puppet/bin/r10k deploy environment -m
 ```
 
-[Next Lab - Lab #4: Installing Puppet Agents](./04-installing-puppet-agents.md)
+[Previous Lab - Lab #2](./02-installing-puppet-server.md)  |  [Next Lab - Lab #4](./04-installing-puppet-agents.md)

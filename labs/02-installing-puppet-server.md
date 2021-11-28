@@ -181,4 +181,4 @@ In this lab, you have:
 + Installed and configured PuppetDB
 + Configured the PuppetDB integration for Puppet Server
 
-[Next Lab - Lab #3: Configuring Puppet Server](./03-configuring-puppet-server.md)
+[Next Lab - Lab #3](./03-configuring-puppet-server.md)
