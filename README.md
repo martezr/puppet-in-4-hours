@@ -30,19 +30,19 @@ vagrant ssh server
 vagrant ssh agent
 ```
 
-## Exercises
+## Labs
 
-[Exercise #2: Installing Puppet Server](./02-installing-puppet-server.md)
+[Lab #2: Installing Puppet Server](./labs/02-installing-puppet-server.md)
 
-[Exercise #3: Configuring Puppet Server](./03-configuring-puppet-server.md)
+[Lab #3: Configuring Puppet Server](./labs/03-configuring-puppet-server.md)
 
-[Exercise #4: Installing Puppet Agents](./04-installing-puppet-agents.md)
+[Lab #4: Installing Puppet Agents](./labs/04-installing-puppet-agents.md)
 
-[Exercisen #5: Puppet Code Development](./05-puppet-code-development.md)
+[Lab #5: Puppet Code Development](./labs/05-puppet-code-development.md)
 
-[Exercise #6: Using Puppet Forge Modules](./06-using-puppet-forge-modules.md)
+[Lab #6: Using Puppet Forge Modules](./labs/06-using-puppet-forge-modules.md)
 
-[Exercise #7: Using Puppet Hiera for Data Separation](./07-using-puppet-hiera.md)
+[Lab #7: Using Puppet Hiera for Data Separation](./labs/07-using-puppet-hiera.md)
 
 ## Solutions
 

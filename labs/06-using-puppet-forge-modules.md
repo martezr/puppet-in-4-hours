@@ -1,12 +1,12 @@
-# Lesson #6: Using Puppet Forge Modules
+# Lab #6: Using Puppet Forge Modules
 
-This lesson walks through using modules from the Puppet Forge.
+This lab walks through using modules from the Puppet Forge.
 
-[Exercise 6.1: Installing Forge Modules](#exercise-61-installing-forge-modules)
+[Lab 6.1: Installing Forge Modules](#lab-61-installing-forge-modules)
 
-[Exercise 6.2: Applying Forge Modules](#exercise-62-applying-forge-modules)
+[Lab 6.2: Applying Forge Modules](#lab-62-applying-forge-modules)
 
-# Exercise 6.1: Installing Forge Modules
+# Lab 6.1: Installing Forge Modules
 
 
 1. Add the following to the Puppetfile in the control repository
@@ -46,7 +46,7 @@ r10k deployment environment -m
 ls /etc/puppetlabs/puppet/code/environments/production/modules
 ```
 
-# Exercise 6.2: Applying Forge Modules
+# Lab 6.2: Applying Forge Modules
 
 2. 
 
@@ -80,4 +80,4 @@ r10k deployment environment -m
 cat /etc/puppetlabs/puppet/code/environments/production/manifest/site.pp
 ```
 
-[Next Lesson - Lesson #7: Using Puppet Hiera for Data Separation](./07-using-puppet-hiera.md)
+[Previous Lab - Lab #5](./labs/05-puppet-code-development.md)  |  [Next Lab - Lab #7](./labs/07-using-puppet-hiera.md)

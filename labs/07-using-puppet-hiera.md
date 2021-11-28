@@ -100,3 +100,5 @@ hierarchy:
 # Exercise 7.4: Encrypting Senstive Data with Hiera Eyaml
 
 /opt/puppetlabs/puppet/bin/eyaml encrypt -s 'hello there'
+
+[Previous Lab - Lab #6](./labs/06-using-puppet-forge-modules.md)

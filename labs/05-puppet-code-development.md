@@ -1,7 +1,7 @@
-# Exercise #5: Puppet Code Development
+# Lab #5: Puppet Code Development
 
 
-# Exercise 
+# Lab 5.1: 
 
 ```bash
 class nginx (
@@ -31,4 +31,4 @@ class nginx (
 }
 ```
 
-[Previous Exercise - Exercise #4](./04-installing-puppet-agents.md)  |  [Next Exercise - Exercise #6](./06-using-puppet-forge-modules.md)
+[Previous Lab - Lab #4](./labs/04-installing-puppet-agents.md)  |  [Next Lab - Lab #6](./labs/06-using-puppet-forge-modules.md)

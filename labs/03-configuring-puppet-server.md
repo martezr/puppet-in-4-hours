@@ -1,16 +1,16 @@
-# Lesson #3: Configuring Puppet Server
+# Lab #3: Configuring Puppet Server
 
-This lesson walks through configuring the Puppet server.
+This lab walks through configuring the Puppet server.
 
-[Exercise 3.1: Creating a Control Repository](#exercise-31-creating-a-control-repository)
+[Lab 3.1: Creating a Control Repository](#lab-31-creating-a-control-repository)
 
 https://github.com/puppetlabs/control-repo
 
-[Exercise 3.2: Installing and Configuring r10k](#exercise-32-installing-and-configuring-r10k)
+[Lab 3.2: Installing and Configuring r10k](#lab-32-installing-and-configuring-r10k)
 
-# Exercise 3.1: Creating a Control Repository
+# Lab 3.1: Creating a Control Repository
 
-# Exercise 3.2: Installing and Configuring r10k
+# Lab 3.2: Installing and Configuring r10k
 
 
 1. 
@@ -48,4 +48,4 @@ EOF
 sudo /opt/puppetlabs/puppet/bin/r10k deploy environment -m
 ```
 
-[Next Lesson - Lesson #4: Installing Puppet Agents](./04-installing-puppet-agents.md)
+[Next Lab - Lab #4: Installing Puppet Agents](./labs/04-installing-puppet-agents.md)

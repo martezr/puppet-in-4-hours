@@ -1,17 +1,17 @@
-# Lesson #4: Installing Puppet Agents
+# Lab #4: Installing Puppet Agents
 
-This lesson walks through installing and configuring the Puppet agent on the agent node.
+This lab walks through installing and configuring the Puppet agent on the agent node.
 
-[Exercise 4.1: Install Puppet agent](#exercise-41-install-puppet-agent)
+[Lab 4.1: Install Puppet agent](#lab-41-install-puppet-agent)
 
-[Exercise 4.2: Bootstrap Puppet agent](#exercise-42-bootstrap-puppet-agent)
+[Lab 4.2: Bootstrap Puppet agent](#lab-42-bootstrap-puppet-agent)
 
-[Exercise 4.3: Puppet Certificate Autosigning](#exercise-43-puppet-certificate-autosigning)
+[Lab 4.3: Puppet Certificate Autosigning](#lab-43-puppet-certificate-autosigning)
 
-[Exercise 4.4: Puppet Trusted Facts](#exercise-44-puppet-trusted-facts)
+[Lab 4.4: Puppet Trusted Facts](#lab-44-puppet-trusted-facts)
 
 
-# Exercise 4.1: Install Puppet agent
+# Lab 4.1: Install Puppet agent
 
 1 .Download the Puppet repository package
 
@@ -43,7 +43,7 @@ sudo apt-get install puppet-agent
 /opt/puppetlabs/bin/puppet config set server puppet --section main
 ```
 
-# Exercise 4.2: Bootstrap Puppet Agent
+# Lab 4.2: Bootstrap Puppet Agent
 
 1. Trigger the Puppet agent bootstrap process
 
@@ -69,7 +69,7 @@ puppetserver ca sign --certname agent.localdomain
 puppet ssl bootstrap
 ```
 
-# Exercise 4.3: Puppet Certificate Autosigning
+# Lab 4.3: Puppet Certificate Autosigning
 
 1. Create an autosigning script on the Puppet server node at /etc/puppetlabs/puppet/autosigning.sh
 
@@ -114,4 +114,4 @@ YAML
 sudo /opt/puppetlabs/bin/puppet ssl bootstrap waitforcert 0
 ```
 
-[Previous Exercise - Exercise #3](./03-configuring-puppet-server.md)  |  [Next Exercise - Exercise #5](./05-puppet-code-development.md)
+[Previous Lab - Lab #3](./labs/03-configuring-puppet-server.md)  |  [Next Lab - Lab #5](./labs/05-puppet-code-development.md)

@@ -1,18 +1,18 @@
-# Lesson #2: Installing Puppet Server
+# Lab #2: Installing Puppet Server
 
-This lesson walks through installing Puppet Server and PuppetDB.
+This lab walks through installing Puppet Server and PuppetDB.
 
-[Exercise 2.1: Install Puppet Server](#exercise-21-install-puppet-server)
+[Lab 2.1: Install Puppet Server](#lab-21-install-puppet-server)
 
-[Exercise 2.2: Install PostgreSQL](#exercise-22-install-postgresql)
+[Lab 2.2: Install PostgreSQL](#lab-22-install-postgresql)
 
-[Exercise 2.3: Install and Configure PuppetDB](#exercise-23-install-and-configure-puppetdb)
+[Lab 2.3: Install and Configure PuppetDB](#lab-23-install-and-configure-puppetdb)
 
-[Exercise 2.4: Configure Puppet Server to PuppetDB connection](#exercise-24-configure-puppet-server-to-puppetdb-connection)
+[Lab 2.4: Configure Puppet Server to PuppetDB connection](#lab-24-configure-puppet-server-to-puppetdb-connection)
 
-# Exercise 2.1: Install Puppet Server
+# Lab 2.1: Install Puppet Server
 
-This exercise walks through installing the Puppet Server package on the server node.
+This lab walks through installing the Puppet Server package on the server node.
 
 1. Download the Puppet repository package
 
@@ -50,9 +50,9 @@ sudo systemctl start puppetserver
 sudo systemctl enable puppetserver
 ```
 
-# Exercise 2.2: Install PostgreSQL
+# Lab 2.2: Install PostgreSQL
 
-This exercise walks through install and configuring the PostgreSQL database used by PuppetDB.
+This lab walks through install and configuring the PostgreSQL database used by PuppetDB.
 
 1. Install PostgreSQL
 
@@ -82,9 +82,9 @@ EOF
 /etc/postgresql/12/main/pg_hba.conf
 ```
 
-# Exercise 2.3: Install and Configure PuppetDB
+# Lab 2.3: Install and Configure PuppetDB
 
-This exercise walks through installing PuppetDB and connecting it to the PostgreSQL database.
+This lab walks through installing PuppetDB and connecting it to the PostgreSQL database.
 
 1. Install PuppetDB
 
@@ -118,7 +118,7 @@ EOF
 sudo /opt/puppetlabs/bin/puppet resource service puppetdb ensure=running enable=true
 ```
 
-# Exercise 2.4: Configure Puppet Server to PuppetDB Connection
+# Lab 2.4: Configure Puppet Server to PuppetDB Connection
 
 1. Install plugins
 
@@ -169,4 +169,4 @@ sudo chown -R puppet:puppet /etc/puppetlabs/puppet
 sudo systemctl restart puppetserver
 ```
 
-[Next Lesson - Lesson #3: Configuring Puppet Server](./03-configuring-puppet-server.md)
+[Next Lab - Lab #3: Configuring Puppet Server](./labs/03-configuring-puppet-server.md)
