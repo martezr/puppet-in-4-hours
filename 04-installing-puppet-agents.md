@@ -71,10 +71,12 @@ puppet ssl bootstrap
 
 # Exercise 4.3: Puppet Certificate Autosigning
 
+Create an autosigning script on the Puppet server node at /etc/puppetlabs/puppet/autosigning.sh
+
 ```bash
 #!/bin/bash
 # define the shared secret we will accept to authenticate identity
-SHARED_SECRET="your the best"
+SHARED_SECRET="mySuperAwesomePassword"
 
 # capture the certname (hostname) used for the request
 CERT_NAME=$1
@@ -92,6 +94,24 @@ else
     echo "***!ALERT!*** incorrect or missing shared secret from ${CERT_NAME}"
 fi
 exit $STATUS
+```
+
+Create a CSR Attributes YAML file with the challenge password and trusted facts
+
+```bash
+cat > /etc/puppetlabs/puppet/csr_attributes.yaml << YAML
+custom_attributes:
+    challengePassword: mySuperAwesomePassword
+extension_requests:
+    pp_role: web
+    pp_hostname: agent
+YAML
+```
+
+Trigger an agent bootstrap
+
+```bash
+sudo /opt/puppetlabs/bin/puppet ssl bootstrap waitforcert 0
 ```
 
 
