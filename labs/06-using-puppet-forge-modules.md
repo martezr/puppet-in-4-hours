@@ -2,7 +2,7 @@
 
 ## Overview
 
-This lab walks through using modules from the Puppet Forge.
+In this lab you will walk through the process of adding and using a Puppet module from the Puppet Forge.
 
 ## Exercises
 

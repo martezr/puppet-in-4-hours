@@ -2,6 +2,7 @@
 
 ## Overview
 
+In this lab you will walk through the process of creating a Puppet module using several basic Puppet coding constructs such as classes, resource types and templates.
 
 ## Exercises
 
@@ -43,10 +44,7 @@ class nginx (
 
 In this lab, you have:
 
-+ Installed and configured Puppet Server
++ Generate a Puppet module
 + Installed and configured the PostgreSQL database for PuppetDB
-+ Installed and configured PuppetDB
-+ Configured the PuppetDB integration for Puppet Server
-
 
 [Previous Lab - Lab #4](./04-installing-puppet-agents.md)  |  [Next Lab - Lab #6](./06-using-puppet-forge-modules.md)

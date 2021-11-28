@@ -2,7 +2,7 @@
 
 ## Overview
 
-This lab walks through configuring the Puppet server.
+In this lab you will walk through the process of creating a Puppet control repository and configuring dynamic Puppet environments using r10k.
 
 ## Exercises
 

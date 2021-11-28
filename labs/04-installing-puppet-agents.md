@@ -2,7 +2,7 @@
 
 ## Overview
 
-This lab walks through installing and configuring the Puppet agent on the agent node.
+In this lab you will walk through the process of installing and configuring a Puppet agent on a linux node. You will also configure policy based autosigning to automate the signing of certificate requests from agent nodes.
 
 ## Exercises
 
