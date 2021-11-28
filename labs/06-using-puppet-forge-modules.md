@@ -88,10 +88,7 @@ cat /etc/puppetlabs/puppet/code/environments/production/manifest/site.pp
 
 In this lab, you have:
 
-+ Installed and configured Puppet Server
-+ Installed and configured the PostgreSQL database for PuppetDB
-+ Installed and configured PuppetDB
-+ Configured the PuppetDB integration for Puppet Server
-
++ Installed a Puppet Forge module
++ Applied a Puppet Forge module
 
 [Previous Lab - Lab #5](./05-puppet-code-development.md)  |  [Next Lab - Lab #7](./07-using-puppet-hiera.md)

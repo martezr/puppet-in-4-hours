@@ -1,5 +1,7 @@
 # Puppet in 4 Hours
 
+![](media/puppet.png)
+
 This repository hosts the code and examples for the Puppet in 4 hours online workshop.
 
 ## Getting Started

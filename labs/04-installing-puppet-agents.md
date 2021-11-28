@@ -12,9 +12,6 @@ This lab walks through installing and configuring the Puppet agent on the agent 
 
 [Lab 4.3: Puppet Certificate Autosigning](#lab-43-puppet-certificate-autosigning)
 
-[Lab 4.4: Puppet Trusted Facts](#lab-44-puppet-trusted-facts)
-
-
 # Lab 4.1: Install Puppet agent
 
 1 .Download the Puppet repository package
@@ -122,9 +119,8 @@ sudo /opt/puppetlabs/bin/puppet ssl bootstrap waitforcert 0
 
 In this lab, you have:
 
-+ Installed and configured Puppet Server
-+ Installed and configured the PostgreSQL database for PuppetDB
-+ Installed and configured PuppetDB
-+ Configured the PuppetDB integration for Puppet Server
++ Installed and configured a Puppet agent
++ Bootstrapped a Puppet agent
++ Configured Puppet policy based certificate autosigning
 
 [Previous Lab - Lab #3](./03-configuring-puppet-server.md)  |  [Next Lab - Lab #5](./05-puppet-code-development.md)
