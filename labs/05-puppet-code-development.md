@@ -1,5 +1,9 @@
 # Lab #5: Puppet Code Development
 
+## Overview
+
+
+## Exercises
 
 # Lab 5.1: 
 
@@ -31,4 +35,14 @@ class nginx (
 }
 ```
 
-[Previous Lab - Lab #4](./labs/04-installing-puppet-agents.md)  |  [Next Lab - Lab #6](./labs/06-using-puppet-forge-modules.md)
+## Review
+
+In this lab, you have:
+
++ Installed and configured Puppet Server
++ Installed and configured the PostgreSQL database for PuppetDB
++ Installed and configured PuppetDB
++ Configured the PuppetDB integration for Puppet Server
+
+
+[Previous Lab - Lab #4](./04-installing-puppet-agents.md)  |  [Next Lab - Lab #6](./06-using-puppet-forge-modules.md)

@@ -1,6 +1,10 @@
 # Lab #3: Configuring Puppet Server
 
+## Overview
+
 This lab walks through configuring the Puppet server.
+
+## Exercises
 
 [Lab 3.1: Creating a Control Repository](#lab-31-creating-a-control-repository)
 
@@ -48,4 +52,4 @@ EOF
 sudo /opt/puppetlabs/puppet/bin/r10k deploy environment -m
 ```
 
-[Next Lab - Lab #4: Installing Puppet Agents](./labs/04-installing-puppet-agents.md)
+[Next Lab - Lab #4: Installing Puppet Agents](./04-installing-puppet-agents.md)

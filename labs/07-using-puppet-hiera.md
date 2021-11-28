@@ -1,6 +1,10 @@
 # Lesson #7: Using Puppet Hiera for Data Separation
 
+## Overview
+
 This lesson walks through using Puppet Hiera for data separation.
+
+## Exercises
 
 [Exercise 7.1: Configure Hiera](#exercise-71-configure-hiera)
 
@@ -101,4 +105,14 @@ hierarchy:
 
 /opt/puppetlabs/puppet/bin/eyaml encrypt -s 'hello there'
 
-[Previous Lab - Lab #6](./labs/06-using-puppet-forge-modules.md)
+
+## Review
+
+In this lab, you have:
+
++ Installed and configured Puppet Server
++ Installed and configured the PostgreSQL database for PuppetDB
++ Installed and configured PuppetDB
++ Configured the PuppetDB integration for Puppet Server
+
+[Previous Lab - Lab #6](./06-using-puppet-forge-modules.md)

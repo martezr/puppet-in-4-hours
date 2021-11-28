@@ -1,6 +1,10 @@
 # Lab #4: Installing Puppet Agents
 
+## Overview
+
 This lab walks through installing and configuring the Puppet agent on the agent node.
+
+## Exercises
 
 [Lab 4.1: Install Puppet agent](#lab-41-install-puppet-agent)
 
@@ -114,4 +118,13 @@ YAML
 sudo /opt/puppetlabs/bin/puppet ssl bootstrap waitforcert 0
 ```
 
-[Previous Lab - Lab #3](./labs/03-configuring-puppet-server.md)  |  [Next Lab - Lab #5](./labs/05-puppet-code-development.md)
+## Review
+
+In this lab, you have:
+
++ Installed and configured Puppet Server
++ Installed and configured the PostgreSQL database for PuppetDB
++ Installed and configured PuppetDB
++ Configured the PuppetDB integration for Puppet Server
+
+[Previous Lab - Lab #3](./03-configuring-puppet-server.md)  |  [Next Lab - Lab #5](./05-puppet-code-development.md)
