@@ -6,13 +6,13 @@ This lesson walks through using Puppet Hiera for data separation.
 
 ## Exercises
 
-[Lab 7.1: Configure Hiera](#exercise-71-configure-hiera)
+[Lab 7.1: Configure Hiera](#lab-71-configure-hiera)
 
-[Lab 7.2: Add Hiera Data](#exercise-72-bootstrap-puppet-agent)
+[Lab 7.2: Add Hiera Data](#lab-72-add-hiera-data)
 
-[Lab 7.3: Installing and Configure Hiera Eyaml](#exercise-73-installing-and-configuring-hiera-eyaml)
+[Lab 7.3: Installing and Configure Hiera Eyaml](#lab-73-installing-and-configuring-hiera-eyaml)
 
-[Lab 7.4: Encrypting Senstive Data with Hiera Eyaml](#exercise-74-encrypting-senstive-data-with-hiera-eyaml)
+[Lab 7.4: Encrypting Senstive Data with Hiera Eyaml](#lab-74-encrypting-senstive-data-with-hiera-eyaml)
 
 
 ### Lab 7.1: Configure Hiera

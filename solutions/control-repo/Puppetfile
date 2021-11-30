@@ -1,0 +1,4 @@
+forge 'https://forge.puppet.com'
+
+mod 'puppetlabs-ntp', '9.1.0'
+mod 'puppetlabs-stdlib', '8.1.0'
