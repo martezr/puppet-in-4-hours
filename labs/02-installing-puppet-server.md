@@ -79,12 +79,6 @@ psql puppetdb -c 'create extension pg_trgm'
 EOF
 ```
 
-3. 
-
-```bash
-/etc/postgresql/12/main/pg_hba.conf
-```
-
 ### Lab 2.3: Install and Configure PuppetDB
 
 This lab walks through installing PuppetDB and connecting it to the PostgreSQL database.
@@ -123,13 +117,13 @@ sudo /opt/puppetlabs/bin/puppet resource service puppetdb ensure=running enable=
 
 # Lab 2.4: Configure Puppet Server to PuppetDB Connection
 
-1. Install plugins
+1. Install additional ruby plugins
 
 ```bash
 sudo /opt/puppetlabs/bin/puppet resource package puppetdb-termini ensure=latest
 ```
 
-2. 
+2. Edit the puppetdb.conf configuration file
 
 ```bash
 cat << EOF > /etc/puppetlabs/puppet/puppetdb.conf
@@ -138,7 +132,7 @@ server_urls = https://puppet:8081
 EOF
 ```
 
-3. 
+3. Update the puppet.conf configuration file
 
 ```bash
 cat << EOF >> /etc/puppetlabs/puppet/puppet.conf
@@ -148,7 +142,7 @@ storeconfigs = true
 EOF
 ```
 
-4. 
+4. Update the routes.yaml configuration file
 
 ```bash
 cat << EOF > /etc/puppetlabs/puppet/routes.yaml

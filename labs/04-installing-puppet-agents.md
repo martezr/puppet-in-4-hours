@@ -49,7 +49,7 @@ sudo apt-get install puppet-agent
 1. Trigger the Puppet agent bootstrap process.
 
 ```bash
-puppet ssl bootstrap waitforcert 0
+/opt/puppetlabs/bin/puppet ssl bootstrap --waitforcert 0
 ```
 
 2. List certificate requests (**Execute this command on the Puppet Server node**).
@@ -67,7 +67,13 @@ puppetserver ca sign --certname agent.localdomain
 4. Trigger the Puppet agent bootstrap process.
 
 ```bash
-puppet ssl bootstrap
+/opt/puppetlabs/bin/puppet ssl bootstrap
+```
+
+5. Trigger a Puppet agent run
+
+```bash
+/opt/puppetlabs/bin/puppet agent -t
 ```
 
 ### Lab 4.3: Puppet Certificate Autosigning
