@@ -103,7 +103,13 @@ fi
 exit $STATUS
 ```
 
-2. Create a CSR Attributes YAML file with the challenge password and trusted facts.
+2. Clean the agent certificate
+
+```bash
+puppetserver ca clean --certname agent.localdomain
+```
+
+3. Create a CSR Attributes YAML file with the challenge password and trusted facts.
 
 ```bash
 cat > /etc/puppetlabs/puppet/csr_attributes.yaml << YAML
@@ -115,7 +121,13 @@ extension_requests:
 YAML
 ```
 
-3. Trigger an agent bootstrap.
+4. Cleanup the agent node SSL certificates
+
+```bash
+rm -Rf /etc/puppetlabs/puppet/ssl/*
+``` 
+
+5. Trigger an agent bootstrap.
 
 ```bash
 sudo /opt/puppetlabs/bin/puppet ssl bootstrap waitforcert 0
