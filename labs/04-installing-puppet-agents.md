@@ -103,13 +103,31 @@ fi
 exit $STATUS
 ```
 
-2. Clean the agent certificate
+2. Make the autosign script executable
+
+```bash
+chmod +x /etc/puppetlabs/puppet/autosign.sh
+```
+
+3. Update the puppet.conf configuration file (/etc/puppetlabs/puppet/puppet.conf) to use the autosign script for policy based autosigning.
+
+```bash
+autosign = /etc/puppetlabs/puppet/autosign.sh
+```
+
+4. Restart the puppetserver service
+
+```bash
+systemctl restart puppetserver
+```
+
+5. Clean the agent certificate
 
 ```bash
 puppetserver ca clean --certname agent.localdomain
 ```
 
-3. Create a CSR Attributes YAML file with the challenge password and trusted facts.
+6. Create a CSR Attributes YAML file with the challenge password and trusted facts.
 
 ```bash
 cat > /etc/puppetlabs/puppet/csr_attributes.yaml << YAML
@@ -121,13 +139,13 @@ extension_requests:
 YAML
 ```
 
-4. Cleanup the agent node SSL certificates
+7. Cleanup the agent node SSL certificates
 
 ```bash
 rm -Rf /etc/puppetlabs/puppet/ssl/*
 ``` 
 
-5. Trigger an agent bootstrap.
+8. Trigger an agent bootstrap.
 
 ```bash
 sudo /opt/puppetlabs/bin/puppet ssl bootstrap waitforcert 0
