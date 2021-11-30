@@ -17,6 +17,7 @@ This lesson walks through using Puppet Hiera for data separation.
 
 ### Lab 7.1: Configure Hiera
 
+1. Update the hiera.yaml file in the control repository with the following content.
 
 ```bash
 ---
@@ -35,13 +36,13 @@ hierarchy:
 
 ### Lab 7.2: Add Hiera Data
 
-1. Create a data YAML file for the agent node `data/common.yaml`.
+1. Create a data YAML file for the agent node `data/common.yaml` in the control repository.
 
 ```bash
 ---
 ntp::servers:
-  - 0.pool.ntp.org
-  - 1.pool.ntp.org
+  - 2.pool.ntp.org
+  - 3.pool.ntp.org
 ```
 
 2. Add the changes to the git repository.
@@ -65,7 +66,7 @@ git push origin
 5. Deploy the hiera data on the Puppet server.
 
 ```bash
-r10k deployment environment -m
+sudo /opt/puppetlabs/puppet/bin/r10k deployment environment -m
 ```
 
 6. Verify that the hiera data file has been added to the Puppet server.
@@ -103,25 +104,25 @@ cd /etc/puppetlabs/puppet/eyaml
 4. Generate a new key pair for encryption and decryption.
 
 ```bash
-/opt/puppetlabs/puppet/bin/eyaml createkeys
+/opt/puppetlabs/puppet/bin/eyaml createkeys --pkcs7-public-key=public_key.pkcs7.pem --pkcs7-private-key=private_key.pkcs7.pem
 ```
 
 5. Update the file ownership on the generated keys.
 
 ```bash
-chown -R puppet:puppet /etc/puppetlabs/puppet/eyaml/keys
+chown -R puppet:puppet /etc/puppetlabs/puppet/eyaml/
 ```
 
 6. Update the file permissions on the keys directory.
 
 ```bash
-chmod -R 0500 /etc/puppetlabs/puppet/eyaml/keys
+chmod -R 0500 /etc/puppetlabs/puppet/eyaml/
 ```
 
 7. Update the file permissions on the eyaml public and private keys.
 
 ```bash
-chmod 0400 /etc/puppetlabs/puppet/eyaml/keys/*.pem
+chmod 0400 /etc/puppetlabs/puppet/eyaml/*.pem
 ```
 
 8. Update the hiera configuration by adding the following configuration to the hiera.yaml file in the control repository.
@@ -135,7 +136,6 @@ hierarchy:
   - name: "Secret data: per-node, per-datacenter, common"
     lookup_key: eyaml_lookup_key # eyaml backend
     paths:
-      - "secrets/nodes/%{trusted.certname}.eyaml"  # Include explicit file extension
       - "common.eyaml"
     options:
       pkcs7_private_key: /etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem
@@ -151,8 +151,10 @@ hierarchy:
 
 ### Lab 7.4: Encrypting Senstive Data with Hiera Eyaml
 
-/opt/puppetlabs/puppet/bin/eyaml encrypt -s 'hello there'
 
+```bash
+/opt/puppetlabs/puppet/bin/eyaml encrypt -s 'super secret eyaml data'
+```
 
 ## Review
 
