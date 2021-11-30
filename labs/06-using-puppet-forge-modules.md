@@ -12,7 +12,6 @@ In this lab you will walk through the process of adding and using a Puppet modul
 
 ### Lab 6.1: Installing Forge Modules
 
-
 1. Add the following to the Puppetfile in the control repository
 
 ```bash
