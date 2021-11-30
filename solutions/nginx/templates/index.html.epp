@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Puppet Nginx</h1>
+
+<p>OS Details: <%= $os_details%>.</p>
+
+</body>
+</html>
+

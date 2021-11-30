@@ -151,6 +151,12 @@ rm -Rf /etc/puppetlabs/puppet/ssl/*
 sudo /opt/puppetlabs/bin/puppet ssl bootstrap waitforcert 0
 ```
 
+9. Trigger a Puppet agent run
+
+```bash
+/opt/puppetlabs/bin/puppet agent -t
+```
+
 ## Review
 
 In this lab, you have:
