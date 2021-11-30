@@ -8,7 +8,7 @@ This lesson walks through using Puppet Hiera for data separation.
 
 [Lab 7.1: Configure Hiera](#exercise-71-configure-hiera)
 
-[Lab 7.2: Bootstrap Puppet agent](#exercise-72-bootstrap-puppet-agent)
+[Lab 7.2: Add Hiera Data](#exercise-72-bootstrap-puppet-agent)
 
 [Lab 7.3: Installing and Configure Hiera Eyaml](#exercise-73-installing-and-configuring-hiera-eyaml)
 
@@ -33,50 +33,98 @@ hierarchy:
       - "common.yaml"
 ```
 
+### Lab 7.2: Add Hiera Data
+
+1. Create a data YAML file for the agent node `data/common.yaml`.
+
+```bash
+---
+ntp::servers:
+  - 0.pool.ntp.org
+  - 1.pool.ntp.org
+```
+
+2. Add the changes to the git repository.
+
+```bash
+git add --all
+```
+
+3. Commit the changes to the git repository.
+
+```bash
+git commit -m 'Update NTP servers'
+```
+
+4. Push the changes to the git remote server.
+
+```bash
+git push origin
+```
+
+5. Deploy the hiera data on the Puppet server.
+
+```bash
+r10k deployment environment -m
+```
+
+6. Verify that the hiera data file has been added to the Puppet server.
+
+```bash
+cat /etc/puppetlabs/puppet/code/environments/production/data/common.yaml
+```
+
+7. Trigger a Puppet run on the agent node
+
+```bash
+puppet agent -t
+```
 
 ### Lab 7.3: Installing and Configuring Hiera Eyaml
 
-1. Install Hiera Eyaml
+1. Install Hiera eyaml.
 
 ```bash
 /opt/puppetlabs/server/bin/puppetserver gem install hiera-eyaml
 ```
 
-2. Create a directory
+2. Create a directory for the hiera eyaml keys.
 
 ```bash
 mkdir -p /etc/puppetlabs/puppet/eyaml
 ```
 
-3. Change the working directory to the newly created directory
+3. Change the working directory to the newly created directory.
 
 ```bash
 cd /etc/puppetlabs/puppet/eyaml
 ```
 
-4. Generate a new key pair for encryption and decryption
+4. Generate a new key pair for encryption and decryption.
 
 ```bash
 /opt/puppetlabs/puppet/bin/eyaml createkeys
 ```
 
-5. Update the file ownership on the generated keys
+5. Update the file ownership on the generated keys.
 
 ```bash
 chown -R puppet:puppet /etc/puppetlabs/puppet/eyaml/keys
 ```
 
-6. Update the file permissions on the keys directory
+6. Update the file permissions on the keys directory.
 
 ```bash
 chmod -R 0500 /etc/puppetlabs/puppet/eyaml/keys
 ```
 
-7. 
+7. Update the file permissions on the eyaml public and private keys.
 
 ```bash
 chmod 0400 /etc/puppetlabs/puppet/eyaml/keys/*.pem
 ```
+
+8. Update the hiera configuration by adding the following configuration to the hiera.yaml file in the control repository.
 
 ```bash
 ---

@@ -52,36 +52,50 @@ ls /etc/puppetlabs/puppet/code/environments/production/modules
 
 ### Lab 6.2: Applying Forge Modules
 
-2. 
+1. Add the following to the manifest/site.pp manifest in the Puppet control repository.
 
 ```bash
 node agent.localdomain {
-  include ntp
+  class { 'ntp':
+    servers => [ '0.pool.ntp.org', '1.pool.ntp.org' ],
+  }
 }
 ```
 
-3. Commit the changes to the git repository
+2. Add the changes to the git repository.
+
+```bash
+git add --all
+```
+
+3. Commit the changes to the git repository.
 
 ```bash
 git commit -m 'Assign the NTP module'
 ```
 
-4. Push the changes to the git remote server
+4. Push the changes to the git remote server.
 
 ```bash
 git push origin
 ```
 
-5. Deploy the modules on the Puppet server
+5. Deploy the modules on the Puppet server.
 
 ```bash
 r10k deployment environment -m
 ```
 
-6. Verify that the ntp module has been added to the Puppet server
+6. Verify that the ntp module has been added to the Puppet server.
 
 ```bash
 cat /etc/puppetlabs/puppet/code/environments/production/manifest/site.pp
+```
+
+7. Trigger a Puppet run on the agent node
+
+```bash
+puppet agent -t
 ```
 
 ## Review
