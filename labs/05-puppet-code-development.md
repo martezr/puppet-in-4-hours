@@ -22,11 +22,12 @@ pdk new module
 
 ```bash
 class nginx (
-  String	$version           = '1.1.1',
+  String	$version           = '1.18.0-0ubuntu1.2',
+  String        $secretdata        = 'not secret',
 )
 {
   package { 'nginx':
-    ensure => 'installed',
+    ensure => $version,
   }
 
   $os_details = $facts['os']['distro']['description']
@@ -36,7 +37,8 @@ class nginx (
     ensure  => file,
     path    => '/var/www/html/index.html',
     mode    => '0644',
-    content => epp('nginx/index.html.epp', {'os_details' => $os_details}),
+    content => epp('nginx/index.html.epp', {'os_details' => $os_details,'secretdata' => $secretdata}),
+    require => Package['nginx'],
   }
 
   service { 'nginx':
@@ -56,7 +58,9 @@ class nginx (
 
 <h1>Puppet Nginx</h1>
 
-<p>OS Details: <%= $os_details%>.</p>
+<p>OS Details: <%= $os_details %>.</p>
+
+<p>Secret Data: <%= $secretdata %>.</p>
 
 </body>
 </html>

@@ -4,8 +4,9 @@
 
 <h1>Puppet Nginx</h1>
 
-<p>OS Details: <%= $os_details%>.</p>
+<p>OS Details: <%= $os_details %>.</p>
+
+<p>Secret Data: <%= $secretdata %>.</p>
 
 </body>
 </html>
-

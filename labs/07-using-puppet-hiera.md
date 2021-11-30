@@ -107,25 +107,38 @@ cd /etc/puppetlabs/puppet/eyaml
 /opt/puppetlabs/puppet/bin/eyaml createkeys --pkcs7-public-key=public_key.pkcs7.pem --pkcs7-private-key=private_key.pkcs7.pem
 ```
 
-5. Update the file ownership on the generated keys.
+5. Create a directory for the eyaml configuration
+
+```bash
+mkdir /etc/eyaml
+```
+
+6. Create the eyaml configuration file at /etc/eyaml/config.yaml
+```bash
+---
+pkcs7_private_key: '/etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem'
+pkcs7_public_key: '/etc/puppetlabs/puppet/eyaml/public_key.pkcs7.pem'
+```
+
+7. Update the file ownership on the generated keys.
 
 ```bash
 chown -R puppet:puppet /etc/puppetlabs/puppet/eyaml/
 ```
 
-6. Update the file permissions on the keys directory.
+8. Update the file permissions on the keys directory.
 
 ```bash
 chmod -R 0500 /etc/puppetlabs/puppet/eyaml/
 ```
 
-7. Update the file permissions on the eyaml public and private keys.
+9. Update the file permissions on the eyaml public and private keys.
 
 ```bash
 chmod 0400 /etc/puppetlabs/puppet/eyaml/*.pem
 ```
 
-8. Update the hiera configuration by adding the following configuration to the hiera.yaml file in the control repository.
+10. Update the hiera configuration by adding the following configuration to the hiera.yaml file in the control repository.
 
 ```bash
 ---
@@ -151,9 +164,57 @@ hierarchy:
 
 ### Lab 7.4: Encrypting Senstive Data with Hiera Eyaml
 
+1. Encrypt the secret data using eyaml on the Puppet server
 
 ```bash
 /opt/puppetlabs/puppet/bin/eyaml encrypt -s 'super secret eyaml data'
+```
+
+2. Add the encrypted data to data/common.eyaml in the control repository
+
+```bash
+---
+nginx::secretdata: >
+  ENC[PKCS7,MIIBiQYJKoZIhvcNAQcDoIIBejCCAXYCAQAxggEhMIIBHQIBAD
+  AFMAACAQEwDQYJKoZIhvcNAQEBBQAEggEAFp3a0tgTvqZPF1mUI/xPrfh5AU
+  dOPh/AVgzOGcOnkc76N8Rxdn8h4dgVt42dlf99zNDVJcxWe4rsGRepg8UCqz
+  kmdzo54rk868hohZEPIA5uOhlURPGoHw+D22wp6zgCSTlIiXqVRTIzZjxGkB
+  FPUj33kFRbMIx34NLKarpK58R1oBlhDbQdvffG7820d08HFda0+9G8EL+obq
+  qpgmppRgn6olLnVWDq1HpGAcijgZna+EdzvXF5SR+tZXyH81mkloqj7Jtcum
+  IdYKFeLaUVTMgFQ4ZJn+hDxQfcW3KVhZEgxdq3+JxuVtUDiWwzR7xoOI9A1s
+  ZQTeTucgztE/uHlzBMBgkqhkiG9w0BBwEwHQYJYIZIAWUDBAEqBBB7Jo3W7m
+  SMPRVPWKCuFD4KgCDl3T6hathWsHBZfwr00aXOBVDK9rx4r7zJQc/tId+5oQ
+  ==]
+```
+
+3. Add the changes to the git repository
+
+```bash
+git add --all
+```
+
+4. Create a new git commit for the changes.
+
+```bash
+git commit -m 'Add eyaml data'
+```
+
+5. Push the code changes to the git repository.
+
+```bash
+git push origin
+```
+
+6. Deploy the code changes to the Puppet server
+
+```bash
+sudo /opt/puppetlabs/puppet/bin/r10k deployment environment -m
+```
+
+7. Trigger a Puppet agent run on the agent node
+
+```bash
+puppet agent -t
 ```
 
 ## Review
