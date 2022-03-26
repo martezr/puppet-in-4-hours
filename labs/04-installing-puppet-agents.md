@@ -78,7 +78,7 @@ puppetserver ca sign --certname agent.localdomain
 
 ### Lab 4.3: Puppet Certificate Autosigning
 
-1. Create an autosigning script on the Puppet server node at /etc/puppetlabs/puppet/autosigning.sh.
+1. Create an autosigning script on the Puppet server node at /etc/puppetlabs/puppet/autosign.sh.
 
 ```bash
 #!/bin/bash
