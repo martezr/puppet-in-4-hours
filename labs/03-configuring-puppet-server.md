@@ -12,7 +12,7 @@ In this lab you will walk through the process of creating a Puppet control repos
 
 ### Lab 3.1: Creating a Control Repository
 
-1. Create a fork of the [Puppet control repository template](https://github.com/puppetlabs/control-repo)
+1. Use the [Puppet control repository template](https://github.com/puppetlabs/control-repo) to generate a control repository
 
 ### Lab 3.2: Installing and Configuring r10k
 

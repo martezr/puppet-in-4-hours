@@ -23,7 +23,7 @@ pdk new module
 ```bash
 class nginx (
   String	$version           = '1.18.0-0ubuntu1.2',
-  String        $secretdata        = 'not secret',
+  String  $secretdata        = 'not secret',
 )
 {
   package { 'nginx':
